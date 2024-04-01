@@ -4,7 +4,7 @@ import { AddExpenseComponent } from './add-transaction.component';
 import { Transaction } from './types/transaction.type';
 
 @Component({
-  selector: 'app-expenses',
+  selector: 'app-transactions',
   template: `
     <div class="container">
       <header>
@@ -40,7 +40,7 @@ import { Transaction } from './types/transaction.type';
         </tbody>
       </table>
     </div>
-    <app-add-expense
+    <app-add-transaction
       [(open)]="addTransactionDialogOpen"
       (transactionAdded)="addTransaction($event)"
     />
@@ -99,7 +99,7 @@ import { Transaction } from './types/transaction.type';
   standalone: true,
   imports: [DatePipe, AddExpenseComponent],
 })
-export default class ExpensesComponent {
+export default class TransactionsComponent {
   transactions: WritableSignal<Transaction[]> = signal([
     {
       id: 1,
